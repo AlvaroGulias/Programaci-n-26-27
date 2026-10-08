@@ -19,4 +19,5 @@ public class Ejercicio4_OperadoresLogicos {
         mojado = llueve || riego;
         System.out.println(mojado);
     }
+
 }

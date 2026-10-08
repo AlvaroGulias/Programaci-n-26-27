@@ -42,6 +42,8 @@ public class Ejercicio3_OperadoresAritmeticos {
 
         int preDecremento = --nueve;
         System.out.println("Pre decremento: " + preDecremento);
+
+
     }
 
 }
