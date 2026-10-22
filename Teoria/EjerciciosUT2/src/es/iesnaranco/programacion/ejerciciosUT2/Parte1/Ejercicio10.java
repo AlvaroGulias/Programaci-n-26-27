@@ -10,10 +10,15 @@ public class Ejercicio10 {
     }
 
     public void run(){
-       double euros = introducirEuros();
-       String moneda = introducirMoneda();
-       double cambio = cambiarMoneda(euros, moneda);
-       imprimir(euros, moneda, cambio);
+       String continuar = "";
+
+        do{
+           double euros = introducirEuros();
+           String moneda = introducirMoneda();
+           double cambio = cambiarMoneda(euros, moneda);
+           imprimir(euros, moneda, cambio);
+           System.out.println("¿Desea continuar? SI/NO"); continuar = sc.next();
+       }while(!continuar.equalsIgnoreCase("no"));
     }
 
     public String introducirMoneda(){
@@ -42,16 +47,16 @@ public class Ejercicio10 {
 
     public double cambiarMoneda(double euros, String tipo_moneda){
         double cambio = 0.0;
-
+        double DOLARES = 1.11, YENES = 120.63, LIBRAS = 0.87;
         switch (tipo_moneda){
             case "dolares":
-                cambio  = euros * 1.11;
+                cambio  = euros * DOLARES;
                break;
             case "yenes":
-                cambio = euros * 120.63;
+                cambio = euros * YENES;
                 break;
             case "libras":
-                cambio = euros * 0.87;
+                cambio = euros * LIBRAS;
                 break;
             default:
                 System.out.println("hubo un error al calcular el cambio");
