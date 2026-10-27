@@ -2,26 +2,32 @@ package es.iesnaranco.programacion.ejerciciosUT2.Parte1;
 import java.util.Scanner;
 public class Ejercicio10 {
 
-    public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Ejercicio10 ej = new Ejercicio10();
-        ej.run();
+        run();
     }
 
-    public void run(){
-       String continuar = "";
+    public static void run(){
+        Scanner sc = new Scanner(System.in);
+
+        String continuar = "";
 
         do{
-           double euros = introducirEuros();
-           String moneda = introducirMoneda();
+           double euros = introducirEuros(sc);
+           String moneda = introducirMoneda(sc);
            double cambio = cambiarMoneda(euros, moneda);
            imprimir(euros, moneda, cambio);
-           System.out.println("¿Desea continuar? SI/NO"); continuar = sc.next();
+           continuar = introducirRespuesra(sc);
        }while(!continuar.equalsIgnoreCase("no"));
     }
 
-    public String introducirMoneda(){
+    public static String introducirRespuesra(Scanner sc){
+        String continuar = "";
+        System.out.println("¿Desea continuar? SI/NO"); continuar = sc.next();
+        return continuar;
+    }
+
+    public static String introducirMoneda(Scanner sc){
         String cambio_moneda = "";
 
         do{
@@ -31,7 +37,7 @@ public class Ejercicio10 {
         return cambio_moneda;
     }
 
-    public double introducirEuros(){
+    public static double introducirEuros(Scanner sc){
         double cantidad_euros = 0.0;
 
         do{
@@ -45,7 +51,7 @@ public class Ejercicio10 {
         return cantidad_euros;
     }
 
-    public double cambiarMoneda(double euros, String tipo_moneda){
+    public static double cambiarMoneda(double euros, String tipo_moneda){
         double cambio = 0.0;
         double DOLARES = 1.11, YENES = 120.63, LIBRAS = 0.87;
         switch (tipo_moneda){
@@ -65,7 +71,7 @@ public class Ejercicio10 {
         return cambio;
     }
 
-    public void imprimir(double euros, String moneda, double cambio){
+    public static void imprimir(double euros, String moneda, double cambio){
         System.out.printf("%.2f € equivalen a %.2f %s%n", euros, cambio, moneda);
     }
 
