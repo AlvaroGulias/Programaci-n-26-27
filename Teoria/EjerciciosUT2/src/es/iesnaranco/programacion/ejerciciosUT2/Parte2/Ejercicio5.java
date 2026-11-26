@@ -35,6 +35,7 @@ public class Ejercicio5 {
         return numero;
     }
 
+
     public static boolean determinarParImpar(int numero) {
         while (numero > 0) {
             int digito = numero % 10;

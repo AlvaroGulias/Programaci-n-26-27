@@ -2,7 +2,7 @@ package es.iesnaranco.programacion.ejerciciosUT2.Parte2;
 
 import java.util.Scanner;
 
-public class Ejericicio2 {
+public class Ejercicio2 {
 
     public static void main(String[] args) {
 
